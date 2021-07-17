@@ -1,2 +1,2 @@
-# angular-reddit-clone
-Reddit lke application using Angular, this serves as frontend for the backend API built using Springboot - You can find the source code for backend API here - https://github.com/SaiUpadhyayula/spring-reddit-clone
+https://programmingtechie.com/2020/04/05/build-a-full-stack-reddit-clone-with-spring-boot-and-angular-part-13/
+https://programmingtechie.com/2020/04/05/build-a-full-stack-reddit-clone-with-spring-boot-and-angular-part-13/
