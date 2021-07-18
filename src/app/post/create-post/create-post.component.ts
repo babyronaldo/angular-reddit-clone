@@ -1,11 +1,11 @@
 import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {CreatePostPayload} from "./create-post-payload";
-import {SubredditModel} from "../../subreddit/subreddit-model";
-import {Router} from "@angular/router";
-import {SubredditService} from "../../subreddit/subreddit.service";
-import {PostService} from "../../shared/post.service";
-import {throwError} from "rxjs";
+import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {CreatePostPayload} from './create-post-payload';
+import {SubredditModel} from '../../subreddit/subreddit-model';
+import {Router} from '@angular/router';
+import {SubredditService} from '../../subreddit/subreddit.service';
+import {PostService} from '../../shared/post.service';
+import {throwError} from 'rxjs';
 
 @Component({
   selector: 'app-create-post',
