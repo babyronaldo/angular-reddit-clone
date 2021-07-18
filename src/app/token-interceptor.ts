@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest} from '@angular/common/http';
 import {BehaviorSubject, Observable, throwError} from 'rxjs';
 import {AuthService} from './auth/shared/auth.service';
-import {catchError, switchMap, take, filter} from "rxjs/operators";
+import {catchError, switchMap, take, filter} from 'rxjs/operators';
 import {LoginResponse} from './auth/login/login-response.payload';
 
 @Injectable({
@@ -16,7 +16,9 @@ export class TokenInterceptor implements HttpInterceptor {
   constructor(public authService: AuthService) {  }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    if (req.url.indexOf('refresh') !== -1 || req.url.indexOf('login') !== -1) {
+    if (req.url.indexOf('refresh') !== -1 || req.url.indexOf('login') !== -1
+      || (req.url.indexOf('/api/posts/') !== -1 && req.method.indexOf('GET') !== -1)
+      || (req.url.indexOf('/api/subreddit') !== -1 && req.method.indexOf('GET') !== -1)) {
       return next.handle(req);
     }
     const jwtToken = this.authService.getJwtToken();

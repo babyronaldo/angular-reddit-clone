@@ -1,4 +1,4 @@
-import {Injectable, Output, EventEmitter} from '@angular/core';
+import {EventEmitter, Injectable, Output} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {SignupRequestPayload} from '../signup/singup-request.payload';
 import {Observable, throwError} from 'rxjs';
@@ -67,6 +67,19 @@ export class AuthService {
 
   isLoggedIn(): boolean {
     return this.getJwtToken() != null;
+  }
+
+  logout() {
+    this.httpClient.post('http://localhost:8080/api/auth/logout', this.refreshTokenPayload, {responseType: 'text'})
+      .subscribe(data => {
+        console.log(data);
+      }, error => {
+        throwError(error);
+      })
+    this.localStorage.clear('authenticationToken');
+    this.localStorage.clear('username');
+    this.localStorage.clear('expiresAt');
+    this.localStorage.clear('refreshToken');
   }
 
 }
