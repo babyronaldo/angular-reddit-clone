@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {SubredditService} from "../subreddit.service";
-import {throwError} from "rxjs";
-import {SubredditModel} from "../subreddit-model";
+import {SubredditService} from '../subreddit.service';
+import {throwError} from 'rxjs';
+import {SubredditModel} from '../subreddit-model';
 
 @Component({
   selector: 'app-list-subreddits',
